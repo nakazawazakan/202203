@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+</head>
+<body>
+
+<style>
+    .hamburger-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+        cursor: pointer;
+        border: 1px solid blue;
+        height: 60px;
+        width: 60px;
+    }
+    .hamburger-open span,
+    .hamburger-open span:before,
+    .hamburger-open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;
+        background: blue;
+        transition: .25s;
+        position: absolute;
+    }
+    .hamburger-open span:before {
+        bottom: 8px;
+    }
+    .hamburger-open span:after {
+        top: 8px;
+    }
+    /* when hamburger is checked */
+    #hamburger-check:checked ~ .hamburger-open span {
+        background: rgba(255, 255, 255, 0);
+        /*background: red;*/
+    }
+    #hamburger-check:checked ~ .hamburger-open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #hamburger-check:checked ~ .hamburger-open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .hamburger-content {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        z-index: 10;
+        background: white;
+        transition: .25s;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* when hamburger is checked */
+    #hamburger-check:checked ~ .hamburger-content {
+        left: 0;
+    }
+</style>
+
+
+<div class="h-screen lg:flex">
+    <div class="flex lg:hidden justify-between items-center">
+        <div class="p-2 border-2 border-red-300 ml-4">ロゴ</div>
+
+
+        <div>
+            <!--open & close hamburger-->
+            <input type="checkbox" id="hamburger-check" class="hidden">
+            <!--hamburger icon-->
+            <label for="hamburger-check" class="hamburger-open">
+                <span></span>
+            </label>
+            <!-- hamburger menu -->
+            <nav class="hamburger-content mt-16">
+                <ul class="hamburger-list p-4">
+                    <li class="hamburger-item mt-4">
+                        <a href="">あいうえお</a>
+                    </li>
+                    <li class="hamburger-item mt-4">
+                        <a href="">かきくけこ</a>
+                    </li>
+                    <li class="hamburger-item mt-4">
+                        <a href="">さしすせそ</a>
+                    </li>
+                    <li class="hamburger-item mt-4">
+                        <a href="">あいうえお</a>
+                    </li>
+                    <li class="hamburger-item mt-4">
+                        <a href="">かきくけこ</a>
+                    </li>
+                    <li class="hamburger-item mt-4">
+                        <a href="">さしすせそ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+    <aside class="hidden lg:flex lg:flex-shrink-0 border-4 border-green-300">
+        <div class="w-80 p-4">
+            <p class="text-2xl">Left Sidebar</p>
+
+            <ul>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">あいうえお</a>
+                </li>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">かきくけこ</a>
+                </li>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">さしすせそ</a>
+                </li>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">あいうえお</a>
+                </li>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">かきくけこ</a>
+                </li>
+                <li class="mt-4">
+                    <a href="https://tailwindui.com/components/application-ui/application-shells/multi-column">さしすせそ</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="flex flex-1 border-4 border-yellow-300">
+        <div class="p-4">
+            <p class="text-2xl">Main Area</p>
+            <div>
+                <img src="./img/dummy3.jpg" class="">
+            </div>
+            <div class="mt-10">
+                <p>吾輩は猫である。名前はまだない。どこで生れたか頓（とん）と見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪（どうあく）な種族であったそうだ。この書生というのは時々我々を捕（つかま）えて煮て食うという話である。しかしその当時は何という考（かんがえ）もなかったから別段恐しいとも思わなかった。ただ彼の掌（てのひら）に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ち付いて書生の顔を見たのがいわゆる人間というものの見始（みはじめ）であろう。この時妙なものだと思った感じが今でも残っている。第一毛を以て装飾されべきはずの顔がつるつるしてまるで薬缶（やかん）だ。その後猫にも大分逢（あ）ったがこんな片輪には一度も出会（でく）わした事がない。のみならず顔の真中が余りに突起している。</p>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

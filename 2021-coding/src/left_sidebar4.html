@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+</head>
+<body class="preload">
+
+<style>
+
+    body.preload *{
+        animation-duration: 0s !important;
+        transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+
+    .hamburger-btn span, .hamburger-btn span:before, .hamburger-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;
+        background: blue;
+        transition: .25s;
+        position: absolute;
+    }
+
+    .hamburger-btn span:before {
+        top: -8px;
+    }
+
+    .hamburger-btn span:after {
+        top: 8px;
+    }
+
+    .hamburger-btn.on span {
+        background: transparent;
+    }
+
+    .hamburger-btn.on span:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .hamburger-btn.on span:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    #hamburger-menu {
+        left: 100%;
+    }
+
+    #hamburger-menu.on {
+        animation: fadeIn 0.75s both 1;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 75%;
+            left: 0;
+        }
+    }
+
+    #hamburger-menu.off {
+        animation: fadeOut 0.75s both 1;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 75%;
+            left: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+</style>
+
+<div class="relative">
+    <header class="fixed top-0 w-full">
+        <div class="flex justify-between items-center px-4 h-24 bg-yellow-300">
+            <div class="">
+                <img src="./img/dummy4.jpg" alt="#" class="w-20">
+            </div>
+            <div>
+                <div id="hamburger-btn" aria-expanded="false" aria-controls="hamburger-menu" data-btn="hamburger-btn"
+                     class="hamburger-btn flex justify-center items-center relative z-20 cursor-pointer border-1 w-60px h-60px">
+                    <span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="hamburger-menu" class="bg-yellow-200 h-screen w-full mt-24 fixed top-0 off">
+        <ul class="p-10">
+            <li class="mt-4 first:mt-0">アイウエオ</li>
+            <li class="mt-4 first:mt-0">アイウエオ</li>
+            <li class="mt-4 first:mt-0">アイウエオ</li>
+            <li class="mt-4 first:mt-0">アイウエオ</li>
+        </ul>
+    </div>
+
+    <div class="mt-32 mb-10 px-4 max-w-xl lg:max-w-screen-2xl mx-auto">
+        <a href="https://tailwindui.com/components/ecommerce/components/checkout-forms" target="_blank"
+           class="text-3xl font-bold">Left Side Bar</a>
+
+        <div class="lg:flex justify-between mt-10">
+            <aside class="">
+                <div class="border-2 border-green-300 w-full lg:w-108 px-4">
+                    <ul class="text-sm md:text-base">
+                        <li class="py-6 flex justify-between">
+                            <img src="./img/dummy2.jpg" class="object-cover w-24 h-24">
+                            <div class="md:flex w-full justify-between ml-10 md:space-x-10">
+                                <div class="">
+                                    <h3 class="mt-2 first:mt-0">Dummy Dummy Dummy Dummy</h3>
+                                    <p class="mt-2 first:mt-0">$100000</p>
+                                    <p class="mt-2 first:mt-0">Gray</p>
+                                    <p class="mt-2 first:mt-0">Small</p>
+                                </div>
+                                <div class="space-x-4 mt-2 md:mt-0">
+                                    <button class="hover:text-blue-300 underline">Edit</button>
+                                    <button class="hover:text-blue-300 underline">Remove</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-6 flex justify-between">
+                            <img src="./img/dummy3.jpg" class="object-cover w-24 h-24">
+                            <div class="md:flex w-full justify-between ml-10 md:space-x-10">
+                                <div class="">
+                                    <h3 class="mt-2 first:mt-0">Dummy</h3>
+                                    <p class="mt-2 first:mt-0">$100000</p>
+                                    <p class="mt-2 first:mt-0">Gray</p>
+                                    <p class="mt-2 first:mt-0">Small</p>
+                                </div>
+                                <div class="space-x-4 mt-2 md:mt-0">
+                                    <button class="hover:text-blue-300 underline">Edit</button>
+                                    <button class="hover:text-blue-300 underline">Remove</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-6 flex justify-between">
+                            <img src="./img/dummy4.jpg" class="object-cover w-24 h-24">
+                            <div class="md:flex w-full justify-between ml-10 md:space-x-10">
+                                <div class="">
+                                    <h3 class="mt-2 first:mt-0">Dummy</h3>
+                                    <p class="mt-2 first:mt-0">$100000</p>
+                                    <p class="mt-2 first:mt-0">Gray</p>
+                                    <p class="mt-2 first:mt-0">Small</p>
+                                </div>
+                                <div class="space-x-4 mt-2 md:mt-0">
+                                    <button class="hover:text-blue-300 underline">Edit</button>
+                                    <button class="hover:text-blue-300 underline">Remove</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <dl class="text-gray-500 space-y-6 text-sm md:text-base">
+                        <div class="flex justify-between">
+                            <dt>SubTotal</dt>
+                            <dd>$104.00</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt>SubTotal</dt>
+                            <dd>$104.00</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt>SubTotal</dt>
+                            <dd>$104.00</dd>
+                        </div>
+
+                        <div class="flex justify-between border-t border-gray-300 pt-6">
+                            <dt>SubTotal</dt>
+                            <dd>$104.00</dd>
+                        </div>
+                    </dl>
+                </div>
+            </aside>
+
+
+            <main>
+                <div class="w-full mt-10 lg:mt-0 px-4 border-2 border-blue-400 text-sm md:text-base">
+                    <div class="mt-4 first:mt-0">
+                        <div class="border-2 border-red-300">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod!
+                                Aut
+                                doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora
+                                voluptas
+                                voluptates.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="./img/dummy4.jpg">
+                        </div>
+                    </div>
+                    <div class="mt-4 first:mt-0">
+                        <div class="border-2 border-red-300">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod!
+                                Aut
+                                doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora
+                                voluptas
+                                voluptates.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="./img/dummy4.jpg">
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+</script>
+<script>
+    let hamburgerBtn = document.getElementById('hamburger-btn');
+    let hamburgerMenu = document.getElementById('hamburger-menu');
+    let body = document.querySelector('body');
+
+    let openHamburgerMenu = function () {
+        hamburgerMenu.classList.toggle('on')
+        hamburgerMenu.classList.toggle('off')
+        body.classList.toggle('overflow-hidden')
+        hamburgerBtn.classList.toggle('on')
+    }
+
+    setTimeout(function(){
+        body.classList.remove('preload')
+    },1000);
+
+    hamburgerBtn.addEventListener('click', openHamburgerMenu)
+</script>
+</body>
+</html>

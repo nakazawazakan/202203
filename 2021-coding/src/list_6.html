@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+</head>
+<body>
+<div class="max-w-7xl mx-auto">
+    <div class="mx-auto max-w-3xl lg:max-w-full lg:flex justify-between">
+        <div class="flex-1 m-4 border border-green-300 flex justify-between flex-col p-4 rounded-md">
+
+            <a href="#" class="w-full h-48 flex-shrink-0 rounded-md h-80">
+                <img src="./img/dummy3.jpg" class="mx-auto h-80 object-contain rounded-md hover:opacity-75">
+            </a>
+
+            <div class="flex-1 flex justify-between flex-col p-4">
+                <div class="flex-1">
+                    <h2>title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.</p>
+                </div>
+                <div class="inline-block mt-10">
+                    <button type="button" class="bg-blue-300 p-4 rounded">AAAAA</button>
+                    <button type="button" class="bg-red-300 p-4 rounded">BBBBB</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="flex-1 m-4 border border-green-300 flex justify-between flex-col p-4 rounded-md">
+
+            <a href="#" class="w-full h-48 flex-shrink-0 rounded-md h-80">
+                <img src="./img/dummy4.jpg" class="mx-auto h-80 object-contain rounded-md hover:opacity-75">
+            </a>
+
+            <div class="flex-1 flex justify-between flex-col p-4">
+                <div class="flex-1">
+                    <h2>title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque,
+                        ducimus
+                        sed.</p>
+                </div>
+                <div class="inline-block mt-10">
+                    <button type="button" class="bg-blue-300 p-4 rounded">AAAAA</button>
+                    <button type="button" class="bg-red-300 p-4 rounded">BBBBB</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="flex-1 m-4 border border-green-300 flex justify-between flex-col p-4 rounded-md">
+
+            <a href="#" class="w-full h-48 flex-shrink-0 rounded-md h-80">
+                <img src="./img/dummy5.jpg" class="mx-auto h-80 object-contain rounded-md hover:opacity-75">
+            </a>
+
+            <div class="flex-1 flex justify-between flex-col p-4">
+                <div class="flex-1">
+                    <h2>title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus
+                        sed.
+                      </p>
+                </div>
+                <div class="inline-block mt-10">
+                    <button type="button" class="bg-blue-300 p-4 rounded">AAAAA</button>
+                    <button type="button" class="bg-red-300 p-4 rounded">BBBBB</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="my-10">
+       <div class="mt-4">
+           <p class="p-8 bg-red-300 pink" data-area="top">ああああああああああああああああああああああああああ</p>
+           <p class="p-8 bg-blue-300 hidden blue" data-area="bottom">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+       </div>
+        <div class="mt-4">
+            <p class="p-8 bg-red-300 pink" data-area="top">ああああああああああああああああああああああああああ</p>
+            <p class="p-8 bg-blue-300 hidden blue" data-area="bottom">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+        </div>
+        <div class="mt-4">
+            <p class="p-8 bg-red-300 pink" data-area="top">ああああああああああああああああああああああああああ</p>
+            <p class="p-8 bg-blue-300 hidden blue" data-area="bottom">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+        </div>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $(function() {
+        $('[data-area]').on('click', function (el){
+            if($(this).hasClass('pink')) {
+                $(this).next('.blue').slideToggle();
+                $(this).toggleClass('open');
+                $('.pink').not($(this)).next().slideUp();
+                $('.pink').not($(this)).removeClass("open");
+            }
+        })
+    })
+</script>
+</body>
+</html>

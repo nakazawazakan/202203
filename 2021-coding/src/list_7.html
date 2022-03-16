@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+    <style>
+        .scrollDownBar:after {
+            content: '';
+            width: 2px;
+            height: 100px;
+            background: red;
+            animation-name: scrollDown;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition: all;
+        }
+        @keyframes scrollDown{
+            0% {
+                transform-origin: top;
+                transform: scale(1,0);
+            }
+            50% {
+                transform-origin: top;
+                transform: scale(1,1);
+            }
+            51% {
+                transform-origin: bottom;
+                transform: scale(1,1);
+            }
+            100% {
+                transform-origin: bottom;
+                transform: scale(1,0);
+            }
+
+        }
+
+        .scrollUpBar:before {
+            content: '';
+            width: 2px;
+            height: 100px;
+            background: blue;
+            animation-name: scrollUp;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition: all;
+        }
+        @keyframes scrollUp{
+            0% {
+                transform-origin: bottom;
+                transform: scale(1,0);
+            }
+            50% {
+                transform-origin: bottom;
+                transform: scale(1,1);
+            }
+            51% {
+                transform-origin: top;
+                transform: scale(1,1);
+            }
+            100% {
+                transform-origin: top;
+                transform: scale(1,0);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/dummy6.jpg" class="w-full h-screen object-cover brightness-50">
+    </header>
+    <div id="scrollTxt">
+        <div class="block scrollDownBar fixed bottom-0 right-0 writing-mode-vertical flex flex-row items-center transition-all duration-300">
+            <p class="">Scroll Down</p>
+        </div>
+
+        <div class="hidden scrollUpBar fixed bottom-0 right-0 writing-mode-vertical flex flex-row items-center transition-all duration-300">
+            <p class="">Page Top</p>
+        </div>
+    </div>
+    <main class="max-w-screen-2xl mx-auto my-10 px-4 flex flex-col lg:flex-row">
+        <aside class="lg:sticky lg:top-0 h-full lg:mr-4">
+            <div class="bg-green-200 p-4">
+                <p>Side bar</p>
+                <div class="my-10 btn vertical-rl">
+                    <p>ダミーテキストダミーテキスト。ダミーテキストダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                </div>
+                <p>Side bar</p>
+                <div class="my-10">
+                    <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキストダミーテキストダミーテキスト。</p>
+                    <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキストダミーテキストダミーテキスト。ダミーテキスト。</p>
+                </div>
+            </div>
+        </aside>
+        <article>
+            <p>画像比率無視</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <a href="#" class="block aspect-w-1 aspect-h-1 overflow-hidden bg-red-200">
+                        <img src="img/dummy1.jpg" class="object-cover transform transition duration-300 ease scale-100 hover:scale-125">
+                    </a>
+                    <div>
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="block aspect-w-1 aspect-h-1 overflow-hidden bg-red-200">
+                        <img src="img/dummy2.jpg" class="object-cover transform transition duration-300 ease scale-100 hover:scale-125">
+                    </a>
+                    <div>
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="block aspect-w-1 aspect-h-1 overflow-hidden bg-red-200">
+                        <img src="img/dummy3.jpg" class="object-cover transform transition duration-300 ease scale-100 hover:scale-125">
+                    </a>
+                    <div>
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="block aspect-w-1 aspect-h-1 overflow-hidden bg-red-200">
+                        <img src="img/dummy4.jpg" class="object-cover transform transition duration-300 ease scale-100 hover:scale-125">
+                    </a>
+                    <div>
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="block aspect-w-1 aspect-h-1 overflow-hidden bg-red-200">
+                        <img src="img/dummy5.jpg" class="object-cover transform transition duration-300 ease scale-100 hover:scale-125">
+                    </a>
+                    <div>
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+            </div>
+            <p>画像比率依存</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-10">
+                <div>
+                    <a href="#" class="flex items-center aspect-w-1 aspect-h-1 bg-blue-200">
+                        <img src="img/200x700.png" class="mx-auto object-contain max-h-full">
+                    </a>
+                    <div class="mt-10">
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="flex items-center aspect-w-1 aspect-h-1 bg-blue-200">
+                        <img src="img/500x500.png" class="mx-auto object-contain max-h-full">
+                    </a>
+                    <div class="mt-10">
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="flex items-center aspect-w-1 aspect-h-1 bg-blue-200">
+                        <img src="img/600x400.png" class="mx-auto object-contain max-h-full">
+                    </a>
+                    <div class="mt-10">
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="flex items-center aspect-w-1 aspect-h-1 bg-blue-200">
+                        <img src="img/dummy4.jpg" class="mx-auto object-contain max-h-full">
+                    </a>
+                    <div class="mt-10">
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="flex items-center aspect-w-1 aspect-h-1 bg-blue-200">
+                        <img src="img/dummy6.jpg" class="mx-auto object-contain max-h-full">
+                    </a>
+                    <div class="mt-10">
+                        <h2>タイトル</h2>
+                        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+<script>
+    let scrollPosition = 0;
+    let isScroll = false;
+    const scrollTxt = document.getElementById('scrollTxt')
+    let down = document.querySelector('.scrollDownBar')
+    let up = document.querySelector('.scrollUpBar')
+
+    const switchScroll = (position) => {
+        //console.log(position)
+        console.log(scrollTxt.getBoundingClientRect().bottom)
+        //console.log(scrollTxt.getBoundingClientRect().top)
+        if (position > scrollTxt.getBoundingClientRect().bottom) {
+            down.classList.remove('block')
+            down.classList.add('hidden')
+            up.classList.remove('hidden')
+            up.classList.add('block')
+        } else {
+            down.classList.remove('hidden')
+            down.classList.add('block')
+            up.classList.remove('block')
+            up.classList.add('hidden')
+        }
+
+    }
+
+    window.addEventListener('scroll', () => {
+        scrollPosition = window.scrollY
+        //console.log(scrollPosition)
+        if (!isScroll) {
+            window.requestAnimationFrame(function () {
+                switchScroll(scrollPosition)
+                isScroll = false
+            })
+            isScroll = true
+        }
+    })
+</script>
+</body>
+</html>

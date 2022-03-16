@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+</head>
+<body>
+
+<style>
+
+    :root {
+        --base: black;
+    }
+
+    .hamburger-btn span, .hamburger-btn span:before, .hamburger-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;
+        background: blue;
+        transition: .25s;
+        position: absolute;
+    }
+
+    .hamburger-btn span:before {
+        top: -8px;
+    }
+
+    .hamburger-btn span:after {
+        top: 8px;
+    }
+
+    .hamburger-btn.on span {
+        background: transparent;
+    }
+
+    .hamburger-btn.on span:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .hamburger-btn.on span:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+
+    .line-center {
+        background: linear-gradient(darkblue 0 0) bottom /var(--line, 0) 3px no-repeat;
+        transition:.25s;
+    }
+    .line-center:hover {
+        --line: 100%;
+    }
+
+    .line-rtl {
+        background: linear-gradient(green, yellow, purple) var(--p, 100%) 100% /var(--d, 0) 3px no-repeat;
+        transition: 0.3s, background-position 0s 0.3s;
+    }
+    .line-rtl:hover {
+        --d: 100%;
+        --p: 0%;
+    }
+
+    .line-ltr {
+        background: linear-gradient(currentColor 0 0) var(--p, 0) 100% /var(--d, 0) 3px no-repeat;
+        transition: 0.3s, background-position 0s 0.3s;
+    }
+    .line-ltr:hover {
+        --d: 100%;
+        --p: 0%;
+    }
+
+    .text-active{
+        color: var(--base)
+    }
+
+
+</style>
+
+<div class="relative">
+    <header class="fixed top-0 w-full">
+        <div class="flex justify-between items-center px-4 h-24 bg-yellow-300">
+            <div class="">
+                <img src="./img/dummy4.jpg" alt="#" class="w-20">
+            </div>
+            <div>
+                <ul class="hidden lg:inline-block">
+                    <li class="inline-block ml-4 line-center"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    <li class="inline-block ml-4 line-rtl"><a href="#">Lorem sit amet</a></li>
+                    <li class="inline-block ml-4 line-ltr"><a href="#">Lorem ipsum dolor sit amet</a></li>
+                    <li class="inline-block ml-4 text-active"><a href="#">Lorem ipsum</a></li>
+                    <li class="inline-block ml-4"><a href="#">Lorem ipsum dolor</a></li>
+                </ul>
+                <div data-btn="hamburger-btn" class="hamburger-btn flex lg:hidden justify-center items-center relative z-20 cursor-pointer border-1 w-60px h-60px"><span></span></div>
+            </div>
+        </div>
+    </header>
+
+
+    <div data-menu="hamburger-menu"
+         class="hamburger-menu bg-gray-300 relative h-screen mt-24 hidden">
+        <ul>
+            <li class="mt-4 first:mt-0">1.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li class="mt-4 first:mt-0">2.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li class="mt-4 first:mt-0">3.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li class="mt-4 first:mt-0">4.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li class="mt-4 first:mt-0">5.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li class="mt-4 first:mt-0">6.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+        </ul>
+    </div>
+
+
+    <div class="mt-32 px-4">
+        <h1 class="text-3xl font-bold">Left Side Bar</h1>
+
+
+        <div class="flex justify-between mt-10">
+
+            <aside class="hidden lg:block">
+                <div class="border-2 border-green-300 w-72">
+                    <ul>
+                        <li class="mt-4 first:mt-0">1.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                        <li class="mt-4 first:mt-0">2.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                        <li class="mt-4 first:mt-0">3.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                        <li class="mt-4 first:mt-0">4.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                        <li class="mt-4 first:mt-0">5.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                        <li class="mt-4 first:mt-0">6.Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                    </ul>
+                </div>
+            </aside>
+
+
+            <main class="w-full">
+                <div class="mt-4 first:mt-0">
+                    <div class="border-2 border-red-300">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod! Aut
+                            doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora
+                            voluptas
+                            voluptates.</p>
+                    </div>
+                    <div class="mt-4">
+                        <img src="./img/dummy4.jpg">
+                    </div>
+                </div>
+                <div class="mt-4 first:mt-0">
+                    <div class="border-2 border-red-300">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius facilis in molestiae quod! Aut
+                            doloribus est illum iure porro sunt. Eius illo iusto maxime nihil possimus quae tempora
+                            voluptas
+                            voluptates.</p>
+                    </div>
+                    <div class="mt-4">
+                        <img src="./img/dummy4.jpg">
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script>
+    $(function() {
+        $('.hamburger-btn').on('click', function() {
+            $('.hamburger-menu').fadeToggle(200)
+        })
+    })
+</script>
+</body>
+</html>

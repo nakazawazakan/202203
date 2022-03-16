@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>TailwindCSS Example</title>
+    <link href="css/app.scss" rel="stylesheet"/>
+
+    <style>
+        .header {
+            height: 100px;
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .on + .content {
+            padding-top: 115px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="bg-red-200 p-20 text-align">
+    <h1>スクロール</h1>
+</div>
+
+<div class="bg-green-200 flex items-center px-40 header" id="header">
+    <h2>ヘッダー</h2>
+</div>
+
+<main class="content flex flex-col-reverse lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-10">
+    <div class="lg:col-span-2 mt-20 lg:mt-0">
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+
+        <p>this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy text.this is dummy
+            text.this is dummy text.this is dummy text.this is dummy text.</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+        <p>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</p>
+    </div>
+    <div class="lg:col-span-1 order-1 lg:order-2">
+        <h2>サイドバー</h2>
+        <ul class="list-disc list-inside">
+            <li>あああああああああああ</li>
+            <li>あああああああああああ</li>
+            <li>あああああああああああ</li>
+            <li>あああああああああああ</li>
+        </ul>
+    </div>
+</main>
+
+<script>
+    window.onscroll = function () {
+        scrollFunc()
+    };
+
+    let header = document.getElementById("header");
+    let sticky = header.offsetTop;
+
+    function scrollFunc() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add('top-0', 'fixed', 'w-full', 'on');
+        } else {
+            header.classList.remove('top-0', 'fixed', 'w-full', 'on');
+        }
+    }
+</script>
+
+</body>
+
+</html>
